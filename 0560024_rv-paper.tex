@@ -102,9 +102,14 @@ The system architecture is shown in figure \ref{fig:system_architecture}. We cap
 
 \subsection{Object Segmentation}
 
-After we captured depth images from realsense, we extract the HHA features from them. HHA features are self-defined features, which address horizontal disparity, height above ground, and angle between surface normal and gravity, for each point. We will create a HHA map like this. The higher intensity means the point has a greater value of the sum of these three features. Then, we see this HHA feature map as the input to the pre-trained neural network. The neural network was trained using Marvin toolkit provided by Princeton. It will output the confidence score of the object with a 16-bit grayscale image. The lighter part in the image indicates that the object is more possible to appear here. Therefore, we complete object segmentation according to every items. For example, if the image contains three objects, it will create three confidence maps. These maps will be used in pose estimation.
+After we captured depth images from realsense, we extract the HHA features from them. HHA features are self-defined features, which address horizontal disparity, height above ground, and angle between surface normal and gravity, for each point. We will create a HHA map like figure \ref{fig:HHA}. The higher intensity means the point has a greater value of the sum of these three features. Then, we see this HHA feature map as the input to the pre-trained neural network. The neural network was trained using Marvin toolkit provided by Princeton. It will output the confidence score of the object with a 16-bit grayscale image. The lighter part in the image indicates that the object is more possible to appear here. Therefore, we complete object segmentation according to every items. For example, if the image contains three objects, it will create three confidence maps. These maps will be used in pose estimation.
 
-[add figures]
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=\linewidth]{HHA.PNG}
+    \caption{HHA features map}
+    \label{fig:HHA}
+\end{figure}
 
 \subsection{Pose Estimation} (not yet)
 
@@ -122,9 +127,16 @@ In this section, we will explain the experiments we did in this project. First, 
 
 \subsection{Benchmark images from APC}
 
-We run the images provided by MIT-Princeton to test the validity of the algorithms. We picked one of the benchmark image set from the shelf in APC scenes. We obtain the HHA features and calculate the confidence map using object segmentation algorithm described above. Next, we predict the poses of the segmented objects by drawing bounding boxes. The results are shown in the figure.
+We run the images provided by MIT-Princeton to test the validity of the algorithms. We picked one of the benchmark image set from the shelf in APC scenes. We obtain the HHA features and calculate the confidence map using object segmentation algorithm described above. Next, we predict the poses of the segmented objects by drawing bounding boxes. The results are shown in figure \ref{fig:benchmark_result}.
 
-[add figure] 
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=\linewidth]{benchmark_result.png}
+    \caption{The results using benchmark images}
+    \label{fig:benchmark_result}
+\end{figure}
+
+ 
 
 \subsection{Self-generated Images} (not yet)
 
