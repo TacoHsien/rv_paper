@@ -81,7 +81,7 @@ Team Delft was one of 16 finalists for the Amazon Picking Challenge, and it is t
 
 \section{TECHNICAL PARTS}
 
-The system architecture is shown in figure \ref{fig:system_architecture}. We capture RGB images and depth images using Realsense SR300 and Realsense-standalone function provided by MIT-Princeton. Realsense-standalone outputs four information, which are RGB image, raw depth image, image of depth aligned to color and the Cam-Info.txt respectively. RGB images, depth-aligned-to-color images and Cam-Info.txt are used for object recognition and pose estimation. Cam-Info.txt contains camera parameters, such as color intrinsics, depth intrinsics and depth-to-color extrinsics. First, we get HHA features from depth images, in which we address its horizontal disparity, height above ground, and angle between surface normal and gravity to form HHA features. Next, we do image segmentation using pre-trained fully convolutional neural network. In this step, object will be recognized and segmented from the image. After segmentation, we do pose estimation and show the bounding boxes on the RGB images.
+The system architecture is shown in Figure \ref{fig:system_architecture}. We capture RGB images and depth images using Realsense SR300 and Realsense-standalone function provided by MIT-Princeton. Realsense-standalone outputs four information, which are RGB image, raw depth image, image of depth aligned to color and the Cam-Info.txt respectively. RGB images, depth-aligned-to-color images and Cam-Info.txt are used for object recognition and pose estimation. Cam-Info.txt contains camera parameters, such as color intrinsics, depth intrinsics and depth-to-color extrinsics. First, we get HHA features from depth images, in which we address its horizontal disparity, height above ground, and angle between surface normal and gravity to form HHA features. Next, we do image segmentation using pre-trained fully convolutional neural network. In this step, object will be recognized and segmented from the image. After segmentation, we do pose estimation and show the bounding boxes on the RGB images.
 
 \begin{figure}[h]
     \centering
@@ -90,7 +90,7 @@ The system architecture is shown in figure \ref{fig:system_architecture}. We cap
     \label{fig:system_architecture}
 \end{figure}
 
-\subsection{Intel Realsense SR300} Intel Realsense SR300, shown in figure \ref{fig:realsense_sr300}, is a RGB-D camera. In this project, the RGB-D camera is used to capture RGB image and depth image of the target object. Both of the two kinds of image data are used in object segmentation stage and pose estimation stage of the algorithm. The resolution of RGB image is 640*480 pixels and the resolution of depth image is 640*480 pixels. The range of depth capturing is 0.2m to 1.5m. 
+\subsection{Intel Realsense SR300} Intel Realsense SR300, shown in Figure \ref{fig:realsense_sr300}, is a RGB-D camera. In this project, the RGB-D camera is used to capture RGB image and depth image of the target object. Both of the two kinds of image data are used in object segmentation stage and pose estimation stage of the algorithm. The resolution of RGB image is 640*480 pixels and the resolution of depth image is 640*480 pixels. The range of depth capturing is 0.2m to 1.5m. 
 
 \begin{figure}[h]
     \centering
