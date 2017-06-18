@@ -31,7 +31,7 @@ Robotic Vision Project - Object Recognition
 }
 
 
-\author{Yu-Hsien Chang$^{1}$ and Yu-Ting Lai$^{2}$% <-this % stops a space
+\author{Yu-Hsien Chang$^{1}$ and Yu-Ting Lai$^{1}$% <-this % stops a space
 \thanks{*This work was not supported by any organization}% <-this % stops a space
 \thanks{$^{1}$Yu-Hsien Chang and Yu-Ting Lai are first grade master students in Institute of Electrical and Control Engineering, National Chiao Tung University, HsinChu, Taiwan
        }%
@@ -104,7 +104,9 @@ The system architecture is shown in figure \ref{fig:system_architecture}. We cap
 
 After we captured depth images from realsense, we extract the HHA features from them. HHA features are self-defined features, which address horizontal disparity, height above ground, and angle between surface normal and gravity, for each point. We will create a HHA map like this. The higher intensity means the point has a greater value of the sum of these three features. Then, we see this HHA feature map as the input to the pre-trained neural network. The neural network was trained using Marvin toolkit provided by Princeton. It will output the confidence score of the object with a 16-bit grayscale image. The lighter part in the image indicates that the object is more possible to appear here. Therefore, we complete object segmentation according to every items. For example, if the image contains three objects, it will create three confidence maps. These maps will be used in pose estimation.
 
-\subsection{Pose Estimation}
+[add figures]
+
+\subsection{Pose Estimation} (not yet)
 
 The equations are an exception to the prescribed specifications of this template. You will need to determine whether or not your equation should be typed using either the Times New Roman or the Symbol font (please no other font). To create multileveled equations, it may be necessary to treat the equation as a graphic and insert it into the text after your paper is styled. Number equations consecutively. Equation numbers, within parentheses, are to position flush right, as in (1), using a right tab stop. To make your equations more compact, you may use the solidus ( / ), the exp function, or appropriate exponents. Italicize Roman symbols for quantities and variables, but not Greek symbols. Use a long dash rather than a hyphen for a minus sign. Punctuate equations with commas or periods when they are part of a sentence, as in
 
@@ -116,15 +118,15 @@ Note that the equation is centered using a center tab stop. Be sure that the sym
 
 \section{EXPERIMENT}
 
-Use this sample document as your LaTeX source file to create your document. Save this file as {\bf root.tex}. You have to make sure to use the cls file that came with this distribution. If you use a different style file, you cannot expect to get required margins. Note also that when you are creating your out PDF file, the source file is only part of the equation. {\it Your \TeX\ $\rightarrow$ PDF filter determines the output file size. Even if you make all the specifications to output a letter file in the source - if your filter is set to produce A4, you will only get A4 output. }
-
-It is impossible to account for all possible situation, one would encounter using \TeX. If you are using multiple \TeX\ files you must make sure that the ``MAIN`` source file is called root.tex - this is particularly important if your conference is using PaperPlaza's built in \TeX\ to PDF conversion tool.
+In this section, we will explain the experiments we did in this project. First, we run the images captured by MIT-Princeton in APC. Second, we will generate the images by ourselves.
 
 \subsection{Benchmark images from APC}
 
-Text heads organize the topics on a relational, hierarchical basis. For example, the paper title is the primary text head because all subsequent material relates and elaborates on this one topic. If there are two or more sub-topics, the next level head (uppercase Roman numerals) should be used and, conversely, if there are not at least two sub-topics, then no subheads should be introduced. Styles named ÒHeading 1Ó, ÒHeading 2Ó, ÒHeading 3Ó, and ÒHeading 4Ó are prescribed.
+We run the images provided by MIT-Princeton to test the validity of the algorithms. We picked one of the benchmark image set from the shelf in APC scenes. We obtain the HHA features and calculate the confidence map using object segmentation algorithm described above. Next, we predict the poses of the segmented objects by drawing bounding boxes. The results are shown in the figure.
 
-\subsection{Self-generated Images}
+[add figure] 
+
+\subsection{Self-generated Images} (not yet)
 
 Positioning Figures and Tables: Place figures and tables at the top and bottom of columns. Avoid placing them in the middle of columns. Large figures and tables may span across both columns. Figure captions should be below the figures; table heads should appear above the tables. Insert figures and tables after they are cited in the text. Use the abbreviation ÒFig. 1Ó, even at the beginning of a sentence.
 
@@ -158,7 +160,7 @@ Figure Labels: Use 8 point Times New Roman for Figure labels. Use words rather t
 
 \section{CONCLUSIONS}
 
-A conclusion section is not required. Although a conclusion may review the main points of the paper, do not replicate the abstract as the conclusion. A conclusion might elaborate on the importance of the work or suggest applications and extensions. 
+In this project, we explore the object segmentation and pose estimation algorithms provided MIT-Princeton in Amazon Picking Challenge. We started the whole experiments from setting up Realsense camera to capture depth images, then applying the fully convolutional neural network provided by Marvin toolkit, to pose estimation for the objects. We also captured the images on our own to test the algorithms. However, we need to calculate the exact camera extrinsic parameters between each poses, and calibrate our camera poses with the camera poses in MIT-Princeton. The bounding boxes results are not as good as expected. In the future, we can estimate the exact poses of the objects with a correct calibration parameters. 
 
 \addtolength{\textheight}{-12cm}   % This command serves to balance the column lengths
                                   % on the last page of the document manually. It shortens
@@ -188,7 +190,6 @@ A conclusion section is not required. Although a conclusion may review the main 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-References are important to the reader; therefore, each citation must be complete and correct. If at all possible, references should be commonly available publications.
 
 \bibliographystyle{IEEEtran}
 \bibliography{0560024_egbib}
