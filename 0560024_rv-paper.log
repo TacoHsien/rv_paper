@@ -1,11 +1,11 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2017.3.30)  18 JUN 2017 15:03
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2017.3.16)  18 JUN 2017 08:54
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
 **0560024_rv-paper
 (./0560024_rv-paper.tex
 LaTeX2e <2011/06/27>
-Babel <3.9h> and hyphenation patterns for 78 languages loaded.
+Babel <3.9h> and hyphenation patterns for 2 languages loaded.
 (./ieeeconf.cls
 Document Class: ieeeconf 2016/4/23 revision V1.6b by Pradeep Misra
 \@IEEEtrantmpdimenA=\dimen102
@@ -297,12 +297,12 @@ Before submitting the final camera ready copy, remember to:
 
 [3] (./0560024_rv-paper.aux) ) 
 Here is how much of TeX's memory you used:
- 2123 strings out of 493304
- 33132 string characters out of 6139871
- 98438 words of memory out of 5000000
- 5574 multiletter control sequences out of 15000+600000
+ 2123 strings out of 495028
+ 33132 string characters out of 6181497
+ 94152 words of memory out of 5000000
+ 5325 multiletter control sequences out of 15000+600000
  39142 words of font info for 75 fonts, out of 8000000 for 9000
- 957 hyphenation exceptions out of 8191
+ 14 hyphenation exceptions out of 8191
  37i,9n,23p,1043b,281s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/ba
 se/8r.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.
